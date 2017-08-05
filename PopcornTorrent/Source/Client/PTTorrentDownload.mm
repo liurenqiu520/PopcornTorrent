@@ -211,7 +211,7 @@ NSString * const PTTorrentItemPropertyTorrentProgress = @"progress";
 }
 
 - (void)playWithHandler:(PTTorrentStreamerReadyToPlay)handler {
-    if (_downloadStatus != PTTorrentDownloadStatusFinished) return;
+    if (_downloadStatus == PTTorrentDownloadStatusFinished) return;
     self.readyToPlayBlock = handler;
     [self startWebServerAndPlay];
 }
